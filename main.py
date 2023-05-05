@@ -8,7 +8,6 @@ fps = pygame.time.Clock()
 
 window = pygame.display.set_mode(screen_size)
 pygame.display.set_caption('Snake Game')
-window.fill((0, 0, 0))
 
 snake = Snake()
 food = Food(screen_size)
@@ -16,7 +15,7 @@ points = Points()
 
 direction = 'right'
 while True:
-    window.fill((0,0,0))
+    window.fill((0, 0, 0))
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
