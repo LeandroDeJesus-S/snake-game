@@ -3,7 +3,7 @@ from objects import Snake, Points, Food
 
 pygame.init()
     
-screen_size = screen_x, screen_y = 1200, 600
+screen_size = screen_x, screen_y = 600, 300
 fps = pygame.time.Clock()
 
 window = pygame.display.set_mode(screen_size)
@@ -15,7 +15,7 @@ points = Points()
 
 direction = 'right'
 while True:
-    window.fill((0, 0, 0))
+    window.fill((220, 230, 226))
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -54,4 +54,4 @@ while True:
     
 
     pygame.display.update()
-    fps.tick(25)
+    fps.tick(15)

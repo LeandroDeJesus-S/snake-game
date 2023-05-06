@@ -56,13 +56,13 @@ class Snake:
         y = self.snake[0][1]
         
         if x < 0:
-            self.snake[0] = (screen_x, self.snake[0][1])
-        elif x > screen_x:
+            self.snake[0] = (screen_x - 10, self.snake[0][1])
+        elif x >= screen_x:
             self.snake[0] = (0, self.snake[0][1])
             
         if y < 0:
-            self.snake[0] = (self.snake[0][0], screen_y)
-        elif y > screen_y:
+            self.snake[0] = (self.snake[0][0], screen_y - 10)
+        elif y >= screen_y:
             self.snake[0] = (self.snake[0][0], 0)
 
 
@@ -93,9 +93,10 @@ class Food:
 class Points:
     def __init__(self) -> None:
         self.score = 0
-        self.color = pygame.Color(255, 255, 255)  # white
+        self.color = pygame.Color(107, 119, 115)
         self.font_name = 'consolas'
         self.font_size = 20
+        self.font_pos = [50, 50]
         
         self.font = pygame.font.SysFont(self.font_name, self.font_size)
     
@@ -104,5 +105,5 @@ class Points:
         score_surface = self.font.render(
             f"Score: {self.score}", True, self.color
         )
-        window_surface.blit(score_surface, [100, 50])
+        window_surface.blit(score_surface, self.font_pos)
     
